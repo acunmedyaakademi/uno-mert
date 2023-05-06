@@ -1,0 +1,103 @@
+:root {
+    /*------------ TextColor ------------*/
+    --text-black: hsl(0, 0%, 10%);
+    --text-white: hsl(0, 0%, 90%);
+
+    /*------------ BackgroundColor ------------*/
+    --bg-black: hsl(0, 0%, 10%);
+    --bg-white: hsl(0, 0%, 90%);
+    --bg-orange-one: hsl(34, 87%, 57%);
+    --bg-orange-two: hsl(27, 82%, 56%);
+    --bg-red-one: hsl(8, 93%, 41%);
+    --bg-red-two: hsl(5, 95%, 39%);
+    --bg-red-three: hsl(6, 89%, 35%);
+
+
+    /*------------ BorderColor ------------*/
+    --border-black: hsl(0, 0%, 10%);
+    --border-white: hsl(0, 0%, 90%);
+
+
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "blank player3 blank2"
+        "player4 midCard player2"
+        "deck player1 blank3"
+    ;
+    justify-items: center;
+    align-items: center;
+    background: var(--bg-orange-one);
+    background: -moz-radial-gradient(circle, var(--bg-orange-one) 0%, var(--bg-orange-two) 41%, var(--bg-red-one) 62%, var(--bg-red-two) 76%, var(--bg-red-three) 100%);
+    background: -webkit-radial-gradient(circle, var(--bg-orange-one) 0%, var(--bg-orange-two) 41%, var(--bg-red-one) 62%, var(--bg-red-two) 76%, var(--bg-red-three) 100%);
+    background: radial-gradient(circle, var(--bg-orange-one) 0%, var(--bg-orange-two) 41%, var(--bg-red-one) 62%, var(--bg-red-two) 76%, var(--bg-red-three) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f19e34", endColorstr="#ab1b0a", GradientType=1);
+}
+
+.blank {
+    grid-area: blank;
+}
+
+.player3 {
+    grid-area: player3;
+}
+
+.blank2 {
+    grid-area: blank2;
+}
+
+.player4 {
+    grid-area: player4;
+}
+
+.midCard {
+    grid-area: midCard;
+}
+
+.player2 {
+    grid-area: player2;
+}
+
+.deck {
+    grid-area: deck;
+}
+
+.player1 {
+    grid-area: player1;
+}
+
+.blank3 {
+    grid-area: blank3;
+}
+
+
+.card {
+    width: 60px;
+    height: 90px;
+    margin: 10px;
+    border: 1px solid var(--border-black);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 90px;
+    cursor: pointer;
+}
+
+.deck {
+    background-image: url("../images/png/uno-card-back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 65px;
+    height: 90px;
+}

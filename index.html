@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/logo/uno-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Uno Game</title>
+    <script src="assets/js/uno.js"></script>
+</head>
+
+<body>
+    <div id="playerOne" class="player1">
+        <h2>Player 1</h2>
+        <div id="playerOneHand"></div>
+        <button id="playerDrawOne" onclick="player1Draw()">Draw Card</button>
+    </div>
+
+    <div id="playerTwo" class="player2">
+        <h2>Player 2</h2>
+        <div id="playerTwoHand"></div>
+        <button id="playerDrawTwo" onclick="player2Draw()">Draw Card</button>
+    </div>
+    <div id="playerThree" class="player3">
+        <h2>Player 3</h2>
+        <div id="playerThreeHand"></div>
+        <button id="playerDrawThree" onclick="player3Draw()">Draw Card</button>
+    </div>
+    <div id="playerFour" class="player4">
+        <h2>Player 4</h2>
+        <div id="playerFourHand"></div>
+        <button id="playerDrawFour" onclick="player4Draw()">Draw Card</button>
+    </div>
+    <div id="discard"></div>
+    <div class="deck"></div>
+</body>
+
+</html>
