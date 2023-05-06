@@ -61,14 +61,6 @@ for (let i = 0; i < 4; i++) {
 
 // TODO: Kart karistirma
 
-
-if (openCard.length == 0) {
-    console.log("first")
-}
-else {
-    console.log("as")
-}
-
 function startGame() {
     if (openCard.length == 0) {
         function shuffle(array) {
@@ -106,9 +98,10 @@ function startGame() {
             player2.push(deck[i]);
             let div = document.createElement("div");
             div.classList.add("card");
-            div.style.backgroundColor = deck[i].color;
+            div.style.backgroundImage = "url('assets/images/png/uno-card-back.png')";
+            // div.style.backgroundColor = deck[i].color;
             div.classList.add("display");
-            div.innerText = deck[i].number;
+            // div.innerText = deck[i].number;
             playerTwoHand.appendChild(div);
         }
         for (let i = 14; i < 21; i++) {
