@@ -26,9 +26,42 @@
 
 }
 
+/*------------ Animation ------------*/
+@keyframes flipY {
 
-.none{
-    display: none;
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+}
+
+@keyframes flipYreverse {
+
+    0% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+}
+
+.display {
+    animation: flipYreverse 1s ease-in-out;
+}
+
+.none {
+    animation: flipY 1s ease-in-out;
+    opacity: 0;
 }
 
 body {
@@ -180,4 +213,29 @@ body {
 .cardYellow {
     background-color: var(--bg-yellow-one);
     color: var(--text-black);
+}
+
+.players {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "h2 playerDraw "
+        "playerHand playerHand"
+    ;
+}
+
+.h2 {
+    grid-area: h2;
+    height: 40px;
+}
+
+.playerDraw {
+    grid-area: playerDraw;
+    height: 40px;
+}
+
+.playerHand {
+    grid-area: playerHand;
 }
