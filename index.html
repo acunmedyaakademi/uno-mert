@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Uno Game</title>
-    <script src="assets/js/uno.js"></script>
+    <script src="assets/js/uno.js" defer></script>
 </head>
 
 <body>
 
     <div class="blank">
-        <h1>UNO</h1>
-        <button id="start" onclick="startGame()">Start Game</button>
+        <div class="logo">
+            <img src="assets/images/logo/uno-logo.png" alt="">
+        </div>
+        <button id="start">Start Game</button>
         <button id="restart" onclick="restartGame()">Restart Game</button>
     </div>
     <div class="blank2">
@@ -25,26 +27,29 @@
     <div id="playerOne" class="player1">
         <h2>Player 1</h2>
         <div id="playerOneHand"></div>
-        <button id="playerDrawOne" onclick="player1Draw()">Draw Card</button>
+        <button id="playerDrawOne">Draw Card</button>
     </div>
 
     <div id="playerTwo" class="player2">
         <h2>Player 2</h2>
         <div id="playerTwoHand"></div>
-        <button id="playerDrawTwo" onclick="player2Draw()">Draw Card</button>
+        <button id="playerDrawTwo">Draw Card</button>
     </div>
     <div id="playerThree" class="player3">
         <h2>Player 3</h2>
         <div id="playerThreeHand"></div>
-        <button id="playerDrawThree" onclick="player3Draw()">Draw Card</button>
+        <button id="playerDrawThree">Draw Card</button>
     </div>
     <div id="playerFour" class="player4">
         <h2>Player 4</h2>
         <div id="playerFourHand"></div>
-        <button id="playerDrawFour" onclick="player4Draw()">Draw Card</button>
+        <button id="playerDrawFour">Draw Card</button>
     </div>
     <div id="discard"></div>
     <div class="deck"></div>
+    <div class="midCard" id="midCard">
+        <img id="midCardBack" src="assets/images/png/uno-card-back-second.png" alt="">
+    </div>
 </body>
 
 </html>

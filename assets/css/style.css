@@ -11,13 +11,24 @@
     --bg-red-one: hsl(8, 93%, 41%);
     --bg-red-two: hsl(5, 95%, 39%);
     --bg-red-three: hsl(6, 89%, 35%);
-
-
+    --bg-blue-one: hsl(214, 81%, 37%);
+    --bg-yellow-one: hsl(54, 97%, 46%);
+    --bg-green-one: hsl(103, 79%, 30%);
+    --bg-red-four: hsl(4, 100%, 38%);
     /*------------ BorderColor ------------*/
     --border-black: hsl(0, 0%, 10%);
     --border-white: hsl(0, 0%, 90%);
+    --border-orange-one: hsl(34, 87%, 57%);
+    --border-orange-two: hsl(27, 82%, 56%);
+    --border-red-one: hsl(8, 93%, 41%);
+    --border-red-two: hsl(5, 95%, 39%);
+    --border-red-three: hsl(6, 89%, 35%);
+
+}
 
 
+.none{
+    display: none;
 }
 
 body {
@@ -39,6 +50,34 @@ body {
     background: -webkit-radial-gradient(circle, var(--bg-orange-one) 0%, var(--bg-orange-two) 41%, var(--bg-red-one) 62%, var(--bg-red-two) 76%, var(--bg-red-three) 100%);
     background: radial-gradient(circle, var(--bg-orange-one) 0%, var(--bg-orange-two) 41%, var(--bg-red-one) 62%, var(--bg-red-two) 76%, var(--bg-red-three) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f19e34", endColorstr="#ab1b0a", GradientType=1);
+}
+
+.logo {
+    display: block;
+    width: 150px;
+    margin: 20px 0;
+}
+
+.blank button {
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 1px solid var(--border-red-two);
+    border-radius: 5px;
+    background-color: var(--bg-orange-one);
+    color: var(--text-white);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.blank button:nth-child(2) {
+    margin-bottom: 5px;
+}
+
+.blank button:hover {
+    background-color: var(--bg-orange-two);
+    border: 1px solid var(--border-red-one);
 }
 
 .blank {
@@ -100,4 +139,45 @@ body {
     border-radius: 5px;
     width: 65px;
     height: 90px;
+}
+
+.midCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 65px;
+    height: 90px;
+
+}
+
+.card {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 65px;
+    height: 90px;
+}
+
+.cardRed {
+    background-color: var(--bg-red-four);
+    color: var(--text-black);
+}
+
+.cardGreen {
+    background-color: var(--bg-green-one);
+    color: var(--text-black);
+}
+
+.cardBlue {
+    background-color: var(--bg-blue-one);
+    color: var(--text-black);
+}
+
+.cardYellow {
+    background-color: var(--bg-yellow-one);
+    color: var(--text-black);
 }
