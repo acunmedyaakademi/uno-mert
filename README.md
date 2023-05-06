@@ -15,3 +15,9 @@
 > Kartların oyuncalara dağıtılamsı yapıldı.
 
 > Kartların dağıtılmasından sonra 1 tane kartın ortaya açılması yapıldı.
+
+## v1.3
+
+> Ufak animasyonlar eklendi ve kartların oyuncuların ellerinde gösterilmesi sağlandı
+
+> Diğer oyuncuların kartların görünmemesi için düzenleme yapıldı diğer sürümde geçiş yapıldığında düzgün eklenicek
