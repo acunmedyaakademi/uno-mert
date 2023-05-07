@@ -111,31 +111,37 @@ function startGame() {
         }
         for (let i = 7; i < 14; i++) {
             player2.push(deck[i]);
+            player2CardID++;
             let div = document.createElement("div");
             div.classList.add("card");
-            div.style.backgroundImage = "url('assets/images/png/uno-card-back.png')";
-            // div.style.backgroundColor = deck[i].color;
+            // div.style.backgroundImage = "url('assets/images/png/uno-card-back.png')";
+            div.style.backgroundColor = deck[i].color;
             div.classList.add("display");
-            // div.innerText = deck[i].number;
+            div.innerText = deck[i].number;
+            div.id = player2CardID;
             playerTwoHand.appendChild(div);
             deck.shift();
         }
         for (let i = 14; i < 21; i++) {
             player3.push(deck[i]);
+            player3CardID++;
             let div = document.createElement("div");
             div.classList.add("card");
             div.style.backgroundColor = deck[i].color;
             div.classList.add("display");
             div.innerText = deck[i].number;
+            div.id = player3CardID;
             playerThreeHand.appendChild(div);
             deck.shift();
         }
         for (let i = 21; i < 28; i++) {
             player4.push(deck[i]);
+            player4CardID++;
             let div = document.createElement("div");
             div.classList.add("card");
             div.style.backgroundColor = deck[i].color;
             div.innerText = deck[i].number;
+            div.id = player4CardID;
             div.classList.add("display");
             playerFourHand.appendChild(div);
             deck.shift();
@@ -155,6 +161,7 @@ function startGame() {
             midCardFront.classList.add("display");
             midCardFront.style.backgroundColor = deck[i].color;
             midCardFront.innerText = deck[i].number;
+            midCardFront.style.zIndex = "1";
             // console.log(openCard);
             deck.shift();
         }
@@ -164,17 +171,35 @@ function startGame() {
     else {
         alert("Oyun zaten baslamış");
     }
-    currentPlayer = 0;
     //* Kartlarin karistirilmasi
-    function game(e) {
-        currentPlayer++;
+
+    game();
+
+
+}
+
+let currentPlayer = [player1, player2, player3, player4];
+
+//TODO: Hangi oyuncuda oldugu kontorolu yapilacak
+//TODO: Oyuncunun karti varsa oynayabilecek
+
+
+
+function game() {
+
+    currentPlayer = 1;
+
+    if (player1CardID !== 0 || player2CardID !== 0 || player3CardID !== 0 || player4CardID !== 0) {
+
         if (currentPlayer == 1) {
+            console.log("DENEME")
+
             playerOneHand.addEventListener('click', function (e) {
                 let card = e.target;
                 let cardColor = card.style.backgroundColor;
                 let cardNumber = card.innerText;
                 let cardID = card.id;
-                if (e.target.classList.contains('card')) {
+                if (e.target.classList.contains('card') && currentPlayer == 1) {
                     if (cardColor == openCard.color || cardNumber == openCard.number) {
                         openCard = {
                             color: cardColor,
@@ -182,47 +207,59 @@ function startGame() {
                         }
                         midCardFront.style.backgroundColor = cardColor;
                         midCardFront.innerText = cardNumber;
-                        console.log(e.target)
                         card.remove();
                         player1.splice((cardID - 1), 1);
+                        console.table(player1);
                         currentPlayer++;
                         console.log(currentPlayer);
+                        // playerOneHand.removeEventListener('click', arguments.callee);
+                    } else {
+                        console.log("Bu kartı oynayamazsınız");
                     }
-                    else {
-                        alert("Bu kartı oynayamazsınız");
-                    }
+                    console.log("deneme")
                 }
+                console.log("deneme2")
             });
+            console.log("DENEME")
         }
-        else if (currentPlayer == 2) {
-            alert("dneeme")
+
+        else if (currentPlayer == 2 && player2CardID !== 0) {
+            console.log("first")
+            console.table(player2);
+            if (player2.color == openCard.color || player2.number == openCard.number) {
+                openCard = {
+                    color: player2.color,
+                    number: player2.number
+                }
+
+                midCardFront.style.backgroundColor = player2.color;
+                midCardFront.innerText = player2.number;
+                player2CardID--;
+                currentPlayer++;
+            }
+        }
+        else if (currentPlayer == 3 && player3CardID !== 0) {
+            currentPlayer++;
+        }
+        else if (currentPlayer == 4 && player4CardID !== 0) {
+            currentPlayer++;
         }
         else {
-            alert("Sıra sizde değil");
+            player1CardID = 0;
+            console.log("oyun sonu")
         }
     }
-    game();
-}
-
-let currentPlayer = [player1, player2, player3, player4];
-
-//TODO: Hangi oyuncuda oldugu kontorolu yapilacak
-//TODO: Oyuncuya gelince kartları gozukcek
-
-function displayCards(player) {
-    for (let i = 0; i < player.length; i++) {
-        let div = document.createElement("div");
-        div.classList.add("card");
-        div.style.backgroundColor = player[i].color;
-        div.classList.add("display");
-        div.innerText = player[i].number;
-        playerOneHand.appendChild(div);
-    }
 }
 
 
+function clickCard(e, playerID) {
 
-console.log(currentPlayer)
+}
+
+
+function otoCard() {
+
+}
 
 
 
