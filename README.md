@@ -21,3 +21,11 @@
 > Ufak animasyonlar eklendi ve kartların oyuncuların ellerinde gösterilmesi sağlandı
 
 > Diğer oyuncuların kartların görünmemesi için düzenleme yapıldı diğer sürümde geçiş yapıldığında düzgün eklenicek
+
+## v1.4
+
+> divlere id tanımlandı bu sayade ortaya bir kart açtığında oyuncu destesinden çıktığını sistemin de bilmesi sağlandı ve kartlar dağıtıldığında ana destede kartlar silinmiyordu düzeltildi
+
+> kart tasarımları değiştirildi
+
+> sıra ile oynanabiliyor
